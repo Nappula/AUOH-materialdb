@@ -34,9 +34,22 @@ app.post("/api/material", material_controller.api_post_material);
 //api.domain.com/materials
 // READ
 app.get("/api/materials", material_controller.api_get_materials);
-// UPDATE
+
+
+// UPDATE 
+//http protokolassa put korvaa kaikki tiedot, joten kaikki tiedot on annettava uudestaan.
+// app.patch korvais vain tietyt kentät.
+app.put("/api/materials/:id", material_controller.api_put_material);
+
+
+
+
+
 
 // DELETE
+
+app.delete("/api/materia/:id", material_controller.api_delete_material);
+
 
 const database_uri = "mongodb+srv://server:lvQc7vGVQOzNTV1a@cluster0-zly3i.mongodb.net/test?retryWrites=true&w=majority";
 
